@@ -1,0 +1,29 @@
+:root {
+
+    --cor-primaria:red;
+    --cor-secundaria:green;
+    --cor-texto:gray;
+    --espaçamento:20px;
+    --fundo:#2555;
+}
+
+body {
+    background-color: var(--fundo);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--cor-primaria);
+    margin: 0;
+    padding: var(--espaçamento);
+    
+}
+
+h1 {
+    background-color: rgb(126, 126, 126);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+} 
+
+img {
+    width: 500px;
+    height: 360px;
+    border: 5px solid;
+}

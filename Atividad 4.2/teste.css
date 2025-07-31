@@ -1,0 +1,56 @@
+/* devem ser utilizadas em qualquer lugar */
+
+
+:root{
+
+
+    --cor-primaria:red;
+    --cor-secundaria:green;
+    --cor-texto:gray;
+    --espacamento:20px;
+    --fundo:#2555;
+    --borda:20px;
+    --cor-button:blue;  
+  }
+  
+  
+  body{
+  
+  
+  font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+  color: var(--cor-texto);
+  margin: 0;
+  padding: calc(var(--espacamento) + 200px);
+  background-color: var(--fundo);
+  
+  
+  }
+  
+  
+  
+  .botao-primario{
+      background-color: var(--cor-primaria);
+      color: var(--cor-secundaria);
+  }
+  
+  
+  .botao-secundario{
+  --cor-button:red;
+  --fundo-btn:yellow;
+  color: var(--cor-button);
+  background-color: var(--fundo-btn);
+  padding: (var(--espacamento));
+  border-radius: var(--borda);
+  }
+  
+  
+  
+  .teste{
+  
+  
+  background-color: var(--cor-button);
+  
+  
+  
+  }
+  
