@@ -1,0 +1,99 @@
+body {
+    background-color: rgb(87, 87, 255);
+}
+
+header {
+    border: 20px ;
+}
+
+
+h1 {
+    text-align: center;
+    text-decoration: underline;
+    background-color: rgb(45, 45, 254);
+    margin: 0;
+}
+
+li {
+  text-decoration: underline;
+  color: rgb(178, 56, 56);
+}
+
+nav ul li {
+  list-style-type: none;
+  padding: 200px;
+  display: inline;
+}
+
+
+.armario {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: 40px;  
+  margin-top: 20px;  
+}
+
+.esquerda, .centro, .direita {
+  padding: 20px;
+  border: 1px solid #ccc;  
+  border-radius: 8px;
+}
+
+p {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.esquerda {
+  background-color: #f0f0f0;
+  border: 2px solid;
+}
+
+.centro {
+  background-color: #f0f0f0;
+  border: 2px solid;
+}
+
+.direita {
+  background-color: #f0f0f0;
+  border: 2px solid;
+}
+
+img {
+  border: 5px solid;
+  border-radius: 5%;
+  margin-top: 10px;
+  margin-right: 29px;
+  cursor: all-scroll;
+}
+
+.img1 {
+  border: 5px solid;
+  border-radius: 5%;
+  margin-top: 10px;
+  margin-right: 0px;
+}
+
+.li1 {
+    background-color: aqua;
+    border: 1px solid;
+    display: inline-block;
+    margin: 2px;
+    padding: 20px;
+ }
+
+ .li2 {
+    background-color: aqua;
+    border: 1px solid;
+    display: inline-block;
+    margin: 2px;
+    padding: 20px;
+ }
+
+ .li3 {
+    background-color: aqua;
+    border: 1px solid;
+    display: inline-block;
+    margin: 2px;
+    padding: 20px;
+ }
