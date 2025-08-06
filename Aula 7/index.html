@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEMÁFORO</title>
+</head>
+<body>
+
+<style>
+
+    body {
+        display: flex;
+        background-color: aliceblue;
+        justify-content: center;
+        height: 100vh;
+        align-items: center;
+        margin: 0;
+
+    }
+
+    .semaforo {
+        width: 100px;
+        background: #3f3f44;
+        padding: 30px;
+        border-radius: 30px;
+
+    }
+
+    .luz {
+        width: 80px;
+        height: 80px;
+        background: #333;
+        border-radius: 100px;
+        padding: 50px;
+
+    }
+
+</style>
+
+<div class="semaforo" onclick="
+    
+    if (document.getElementById('vermelho').style.background == 'red') {
+    document.getElementById('vermelho').style.background = '#444';
+    document.getElementById('amarelo').style.background = 'yellow';
+    document.body.style.background = '#fff5c0'; // Fundo amarelo claro
+
+} else if (document.getElementById('amarelo').style.background == 'yellow') {
+    document.getElementById('amarelo').style.background = '#444';
+    document.getElementById('verde').style.background = 'green';
+    document.body.style.background = '#d4fcd4'; // Fundo verde claro
+
+} else if (document.getElementById('verde').style.background == 'green') {
+    document.getElementById('verde').style.background = '#444';
+    document.getElementById('azul').style.background = 'blue';
+    document.body.style.background = '#add8e6'; // Fundo azul claro
+
+} else {
+    document.getElementById('azul').style.background = '#444';
+    document.getElementById('vermelho').style.background = 'red';
+    document.body.style.background = '#fcd4d4'; // Fundo vermelho claro
+}
+">
+</div>
+
+<div id="vermelho" class="luz"></div>
+<div id="amarelo" class="luz"></div>
+<div id="verde" class="luz"></div>
+<div id="azul" class="luz"></div>
+    
+</body>
+</html>
