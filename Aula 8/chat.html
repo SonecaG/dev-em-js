@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificadores</title>
+</head>
+<body>
+
+    <header>
+        <h1>Verificador de Números</h1>
+        <button onclick="verificarnumero()">Verificar Número</button>
+        <p id="resultado"></p>
+
+        <h1>Verificador de Voto</h1>
+        <button onclick="verificarvotar()">Verificar Se Pode Votar</button>
+        <p id="voto"></p>
+
+        <h1>Verificador de Par e Ímpar</h1>
+        <button onclick="verificarparimpar()">Verificar Se é Par ou Ímpar</button>
+        <p id="Par ou Ímpar"></p>
+
+        <h1>Classificador de Triângulos</h1>
+        <button onclick="verificartriangulo()">Classificar o Triângulo</button>
+        <p id="Triângulo"></p>
+
+        <!-- Novas funcionalidades -->
+        <h1>Verificador de Múltiplos</h1>
+        <button onclick="verificarMultiplo8e16()">Verificar se é múltiplo de 8 e 16</button>
+        <p id="multiplo"></p>
+
+        <h1>Verificador Positivo e Maior que 15</h1>
+        <button onclick="verificarMaiorQue15()">Verificar se é positivo e maior que 15</button>
+        <p id="positivoMaior15"></p>
+
+        <h1>Verificador Divisível por 9 ou 6</h1>
+        <button onclick="verificarDivisivelPor9ou6()">Verificar se é divisível por 9 ou 6</button>
+        <p id="divisivel"></p>
+
+    </header>
+    
+    <script>
+        // Função para verificar se o número é positivo ou negativo
+        function verificarnumero() {
+            let numero = prompt('Digite um número');
+            numero = Number(numero); // Converte para número
+
+            if (isNaN(numero)) {
+                document.getElementById('resultado').innerHTML = 'Por favor, insira um número válido.';
+            } else if (numero > 0) {
+                document.getElementById('resultado').innerHTML = 'O número é positivo.';
+            } else if (numero < 0) {
+                document.getElementById('resultado').innerHTML = 'O número é negativo.';
+            } else {
+                document.getElementById('resultado').innerHTML = 'O número é zero.';
+            }
+        }
+
+        // Função para verificar se a pessoa pode votar
+        function verificarvotar() {
+            let idade = prompt('Digite sua idade');
+            idade = Number(idade); // Converte para número
+
+            if (isNaN(idade)) {
+                document.getElementById('voto').innerHTML = 'Por favor, insira uma idade válida.';
+            } else if (idade >= 18) {
+                document.getElementById('voto').innerHTML = 'Você pode votar.';
+            } else {
+                document.getElementById('voto').innerHTML = 'Você não pode votar.';
+            }
+        }
+
+        // Função para verificar se o número é par ou ímpar
+        function verificarparimpar() {
+            let numero = prompt('Digite um número');
+            numero = Number(numero); // Converte para número
+
+            if (isNaN(numero)) {
+                document.getElementById('Par ou Ímpar').innerHTML = 'Por favor, insira um número válido.';
+            } else if (numero % 2 === 0) {
+                document.getElementById('Par ou Ímpar').innerHTML = 'O número é Par.';
+            } else {
+                document.getElementById('Par ou Ímpar').innerHTML = 'O número é Ímpar.';
+            }
+        }
+
+        // Função para classificar o tipo de triângulo
+        function verificartriangulo() {
+            let numero1 = prompt('Digite o comprimento do primeiro lado');
+            let numero2 = prompt('Digite o comprimento do segundo lado');
+            let numero3 = prompt('Digite o comprimento do terceiro lado');
+
+            numero1 = Number(numero1);
+            numero2 = Number(numero2);
+            numero3 = Number(numero3);
+
+            if (isNaN(numero1) || isNaN(numero2) || isNaN(numero3)) {
+                document.getElementById('Triângulo').innerHTML = 'Por favor, insira valores numéricos válidos para os lados.';
+            } else if (numero1 <= 0 || numero2 <= 0 || numero3 <= 0) {
+                document.getElementById('Triângulo').innerHTML = 'Os lados do triângulo devem ser números positivos.';
+            } else if (numero1 === numero2 && numero2 === numero3) {
+                document.getElementById('Triângulo').innerHTML = 'Triângulo Equilátero (todos os lados iguais).';
+            } else if (numero1 !== numero2 && numero2 !== numero3 && numero1 !== numero3) {
+                document.getElementById('Triângulo').innerHTML = 'Triângulo Escaleno (todos os lados diferentes).';
+            } else {
+                document.getElementById('Triângulo').innerHTML = 'Triângulo Isósceles (dois lados iguais).';
+            }
+        }
+
+        // Função para verificar múltiplo de 8 e 16
+        function verificarMultiplo8e16() {
+            let numero = prompt('Digite um número');
+            numero = Number(numero);
+
+            if (isNaN(numero)) {
+                document.getElementById('multiplo').innerHTML = 'Por favor, insira um número válido.';
+            } else if (numero % 8 === 0 && numero % 16 === 0) {
+                document.getElementById('multiplo').innerHTML = 'O número é múltiplo de 8 e 16.';
+            } else {
+                document.getElementById('multiplo').innerHTML = 'O número não é múltiplo de 8 e 16.';
+            }
+        }
+
+        // Função para verificar se o número é positivo e maior que 15
+        function verificarMaiorQue15() {
+            let numero = prompt('Digite um número');
+            numero = Number(numero);
+
+            if (isNaN(numero)) {
+                document.getElementById('positivoMaior15').innerHTML = 'Por favor, insira um número válido.';
+            } else if (numero > 15 && numero > 0) {
+                document.getElementById('positivoMaior15').innerHTML = 'O número é positivo e maior que 15.';
+            } else {
+                document.getElementById('positivoMaior15').innerHTML = 'O número não é positivo ou não é maior que 15.';
+            }
+        }
+
+        // Função para verificar divisibilidade por 9 ou 6
+        function verificarDivisivelPor9ou6() {
+            let numero = prompt('Digite um número');
+            numero = Number(numero);
+
+            if (isNaN(numero)) {
+                document.getElementById('divisivel').innerHTML = 'Por favor, insira um número válido.';
+            } else if (numero % 9 === 0 || numero % 6 === 0) {
+                document.getElementById('divisivel').innerHTML = 'O número é divisível por 9 ou por 6.';
+            } else {
+                document.getElementById('divisivel').innerHTML = 'O número não é divisível por 9 ou por 6.';
+            }
+        }
+
+    </script>
+
+</body>
+</html>
