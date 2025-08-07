@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDITOR DE TEXTO</title>
+</head>
+<body>
+
+    <header><h1><ins>EDITOR DE TEXTO</ins></h1></header>
+
+    <textarea id="textoInput" placeholder="DIGITE ALGO"></textarea>
+
+    <br>
+
+    <button id="mostrar_btn" onclick="
+    document.getElementById('mostrar').innerHTML = document.getElementById('textoInput').value">
+        Mostrar
+    </button>
+
+    <button id="limpar_btn" onclick="
+    document.getElementById('mostrar').innerHTML = '';     
+    ">
+        Limpar
+    </button>
+
+    <h3>ESCOLHA A COR</h3>
+
+    <select id="corSelect" onchange="
+    document.getElementById('mostrar').style.color = this.value;">
+        <option value="black">Escolha Cor</option>
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="purple">Purple</option>
+    </select>
+
+    <h3>Mensagem aparece aqui:</h3>
+    <div id="mostrar"></div>
+
+</body>
+</html>
