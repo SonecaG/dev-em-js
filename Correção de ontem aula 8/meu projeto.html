@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificadores</title>
+</head>
+<body>
+
+    <header>
+        <h1>Verificador de Números</h1>
+
+    <button onclick="verificarnumero()">Verificar Número</button>
+
+    <p id="resultado"></p>
+
+    <h1>Verificador de Voto</h1>
+
+    <button onclick="verificarvotar()">Verificar Se Pode Votar</button>
+
+    <p id="voto"></p>
+
+    <h1>Verificador de Par e Ímpar</h1>
+
+    <button onclick="verificarparimpar()">Verificar Se é Par ou Ímpar</button>
+
+    <p id="Par ou Ímpar"></p>
+
+    <h1>Classificador de Triângulos</h1>
+
+    <button onclick="verificartriangulo()">Classificar o Triângulo</button>
+
+    <p id="Triângulo"></p>
+
+    </header>
+    <script>
+        function verificarnumero() {
+        let numero = prompt('digite um numero')
+
+        if (numero > 0){
+            document.getElementById('resultado').innerHTML='O número é positivo';
+
+        } else if (numero < 0){
+            document.getElementById('resultado').innerHTML='número é negativo';
+
+        }
+
+        else {
+            document.getElementById('resultado').innerHTML='Isso por acaso se assemelha a um número?'
+        }
+
+        }
+
+        function verificarvotar() {
+        let numero = prompt('digite idade')
+
+        if (numero > 18){
+            document.getElementById('voto').innerHTML='Pode Votar';
+
+        } else if (numero < 18){
+            document.getElementById('voto').innerHTML='Não Pode Votar';
+
+        }
+
+        else {
+            document.getElementById('voto').innerHTML='Se acha bem engraçado né?'
+        }
+
+        }
+
+        function verificarparimpar() {
+        let numero = parseInt(prompt('digite um numero'))
+
+        if (numero % 2 === 0){
+            document.getElementById('Par ou Ímpar').innerHTML='É Par';
+
+        } else 
+            document.getElementById('Par ou Ímpar').innerHTML='É Ímpar';
+
+        }
+
+        function verificartriangulo() {
+        let numero1 = parseInt(prompt('digite um numero'))
+
+        let numero2 = parseInt(prompt('digite um numero'))
+
+        let numero3 = parseInt(prompt('digite um numero'))
+
+        if (numero1 == numero2 && numero2 == numero3 && numero3 == numero1){
+            document.getElementById('Triângulo').innerHTML='Equilátero (todos os lados iguais)';
+
+        } else if (numero1 != numero2 && numero2 != numero3 && numero3 == numero1){
+            document.getElementById('Triângulo').innerHTML='Escaleno (todos os lados diferentes)';
+
+        }
+
+        else {
+            document.getElementById('Triângulo').innerHTML='Isóceles (dois lados iguais)';
+
+        }
+        }
+
+        
+    </script>
+    
+</body>
+</html>
+
