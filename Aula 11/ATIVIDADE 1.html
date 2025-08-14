@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Atividade 1</title>
+</head>
+<body>
+
+  <h1><ins>Calculadora</ins></h1>
+  <button onclick="calculadora()">Calcular</button><br><br>
+
+  <h1><ins>Senha</ins></h1>
+  <label>Senha</label>
+  <input type="password" id="senha" placeholder="Digite sua senha">
+  <button onclick="senha()">Enviar</button>
+  <button id="mostrarSenha" onclick="mostrarSenha()">Mostrar Senha</button>
+  <p id="resultado"></p>
+
+  <script>
+    // Função da Calculadora
+    function calculadora() {
+      const operacoesValidas = ["+", "-", "*", "^", "/"];
+
+      let n1 = parseFloat(prompt("Digite o primeiro número:"));
+      let operador = prompt("Digite a operação (+, -, *, ^, /):");
+      let resultado;
+
+      if (isNaN(n1)) {
+        alert("Por favor, digite um número válido.");
+        return;
+      }
+
+      if (!operacoesValidas.includes(operador)) {
+        alert("Operador inválido.");
+        return;
+      }
+
+      if (operador === "^") {
+        let expoente = parseInt(prompt("Digite o expoente:"));
+        if (!isNaN(expoente) && expoente >= 0) {
+          resultado = 1;
+          for (let i = 1; i <= expoente; i++) {
+            resultado *= n1;
+          }
+        } else {
+          alert("Expoente inválido.");
+          return;
+        }
+      } else {
+        let n2 = parseFloat(prompt("Digite o segundo número:"));
+
+        if (isNaN(n2)) {
+          alert("Por favor, digite um segundo número válido.");
+          return;
+        }
+
+        if (operador === "+") {
+          resultado = n1 + n2;
+        } else if (operador === "-") {
+          resultado = n1 - n2;
+        } else if (operador === "*") {
+          resultado = n1 * n2;
+        } else if (operador === "/") {
+          if (n2 === 0) {
+            alert("Erro: divisão por zero!");
+            throw new Error("Divisão por zero");
+          }
+          resultado = n1 / n2;
+        }
+      }
+
+      alert("Resultado: " + resultado);
+    }
+
+    // Função de validação da senha
+    function senha() {
+      const senha = document.getElementById('senha').value;
+      const resultado = document.getElementById('resultado');
+    
+      // Critérios
+      const temMaiuscula = /[A-Z À-Ü]/.test(senha); // letras maiúsculas com acento
+      const temNumero = /\d/.test(senha); // pelo menos um número
+      const tamanhoOk = senha.length >= 8;
+
+      // Validação
+      if (temMaiuscula && temNumero && tamanhoOk) {
+        resultado.textContent = "Senha válida ✅";
+        resultado.style.color = "green";
+      } else {
+        resultado.textContent = "Senha inválida ❌. Ela deve conter:\n- Letra maiúscula\n- Número\n- Pelo menos 8 caracteres.";
+        resultado.style.color = "red";
+      }
+    }
+
+    // Função para mostrar/ocultar senha
+    function mostrarSenha() {
+      const senhaInput = document.getElementById('senha');
+      const botao = document.getElementById('mostrarSenha'); // Seleciona o botão específico
+
+      // Verifica o tipo atual do campo
+      if (senhaInput.type === 'password') {
+        senhaInput.type = 'text';  // Altera para 'text' para mostrar a senha
+        botao.textContent = 'Ocultar Senha';  // Muda o texto do botão
+      } else {
+        senhaInput.type = 'password';  // Altera para 'password' para esconder a senha
+        botao.textContent = 'Mostrar Senha';  // Muda o texto do botão de volta
+      }
+    }
+  </script>
+
+</body>
+</html>
